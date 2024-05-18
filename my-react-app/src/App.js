@@ -3,7 +3,7 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-      <p>test</p>
+      <p>test!</p>
     </div>
   );
 }
