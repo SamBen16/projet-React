@@ -50,7 +50,8 @@ li {
 /* footer */
 .style-footer {
   width: 100%;
-  height: 209px;
+  height: auto;
+  min-height: 250px;
   gap: 0px;
   opacity: 0px;
   background-color: black;
@@ -111,7 +112,6 @@ li {
   opacity: 0px;
   border: 1px solid #000000;
   margin-bottom: 10px;
-  /* background: linear-gradient(to bottom, #f93f3f, #fd0000); */
   border-radius: 25px;
 }
 .thumb p {
@@ -121,6 +121,104 @@ li {
   left: 0;
   margin: 10px;
 }
+
+/* Collapse */
+.collapse {
+  display: flex;
+  border-radius: 10px;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 90%;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.barreCollapse {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 20px 13px 18px;
+  background: #FF6060;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0;
+}
+.vector {
+  width: 25px;
+  height: 17px;
+  transform: rotate(0deg);
+  transition: 2s ease-in;
+} 
+.vector.rotation.rotate {
+  transform: rotate(-180deg); 
+  transition: 2s ease-in;
+}
+.collapseToggle.animated.expanded {
+  max-height: 1000px; 
+  margin-top: 0; 
+  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; 
+}
+.collapseToggle {
+  max-height: 0px; 
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; 
+}
+.container {
+  background-color: #F6F6F6 ;
+  width: 100%;
+  border-radius: 10px;
+}
+.container li {
+  justify-content: flex-start;
+}
+
+.collapseToggle.animated.expanded .container {
+  animation: slidein 0.5s ease;
+  margin-top: 0;
+}
+.textCollapse {
+  position: relative; 
+  z-index: 1; 
+}
+.textCollapse, .collapseToggle.animated.expanded {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+.textCollapse, .collapseToggle {
+  /* width: 100%;
+  height: 25vh;
+  margin-bottom: 10px; */
+  animation-duration: 2s;
+  animation-name: slideout;
+}
+@keyframes slidein {
+  from {
+    margin-top: -10px; 
+    opacity: 0; 
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideout {
+  from {
+    margin-top: 0;
+    opacity: 1;
+  }
+  to {
+    margin-top: -10px; 
+    opacity: 0; 
+  }
+}
+
 
 /************************ RESPONSIVE MOBILE  ************************/
 @media only screen and (max-width: 600px) {
@@ -160,14 +258,9 @@ li {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
   }
-  #thumb-container {
-    margin: 0;
-    width: 100%;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .thumb-container {
-    width: 100%;
-    grid-template-columns: repeat(1, 1fr);
+  .collapse {
+    flex-direction: row; 
+    margin-bottom: 5px;
   }
 }
 
@@ -179,4 +272,12 @@ li {
     font-size: 200%;
     font-weight: bold;
   }
+  .barreCollapse {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    margin: 15px;
+    margin-bottom: 10px;
+  } 
+  
 }
