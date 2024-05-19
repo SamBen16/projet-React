@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Apartment from './pages/Apartment';
 import NotFound from './pages/NotFound';
-import './App.scss';
 
 function App() {
   return (

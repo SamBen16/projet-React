@@ -1,3 +1,8 @@
+html {
+  width: 100%;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,186 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* header */
+.style-header {
+  width: 95%;
+  height: 68px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px;
+}
+.logo {
+  width: 40%;
+}
+.nav {
+  width: 50%;
+}
+.nav-header,
+li {
+  opacity: 0px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.nav-header li a {
+  text-decoration: none;
+  color: #000;
+}
+.nav-header li a.active {
+  text-decoration: underline;
+}
+
+/* footer */
+.style-footer {
+  width: 100%;
+  height: 209px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0px;
+}
+.logo_footer {
+  margin-bottom: 30px;
+}
+.copyRight_footer {
+  margin-bottom: -35px;
+}
+.banniereCopyRight {
+  color: white;
+}
+
+
+/************************ RESPONSIVE MOBILE  ************************/
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 35px;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+  }
+
+  .style_section {
+    justify-content: flex-start; 
+    color: white;
+    margin-bottom: 10px;
+  }
+  .image-container img {
+    width: 100%;
+    height: 220px;
+    display: block;
+    margin: auto;
+  }
+ #imageCounterDesktop {
+  display: none;
+ }
+  #apartment {
+    width: 100%;
+    margin: 0;
+  }
+  #imgAndLocation {
+    width: 50%;
+  }
+
+  .imgCover {
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+  }
+  #tags {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    color: black;
+  }
+  .titleApartment, .locationApartment {
+    color: #FF6060;
+  }
+  .locationApartment {
+    color: black;
+  }
+  .apartmentTags {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: auto;
+  }
+  .apartmentTags span {
+    background-color: #FF6060;
+    padding: 10px; 
+    margin-right: 20px;
+    display: inline-block; 
+    color: white;
+    border-radius: 5px;
+
+  }
+  #nameRating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 15px;
+  }
+  #apartmentCollapse {
+    flex-direction: column;
+  }
+  #name {
+    display: flex;
+    flex-direction: row;
+  }
+  .imgName {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
+  .banniereCopyRight {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+  }
+
+  .collapse {
+    flex-direction: row; 
+    margin-bottom: 5px;
+  }
+  #apartmentCollapse {
+    flex-direction: column;
+  }
+  .style_section {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .style_section p {
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: auto;
+    margin-bottom: 5px;
+  }
+  #messageChezVous,
+  #messagePartout {
+      margin: 0.2em; 
+  }
+  .oupsErrorMobile {
+    display: block;
+
+  }
+  .oupsErrorPc {
+    display: none;
+  }
+
 }
