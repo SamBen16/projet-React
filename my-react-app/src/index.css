@@ -1,3 +1,4 @@
+/************************ STYLES GENERAUX  ************************/
 html {
   width: 100%;
   margin: 0;
@@ -69,6 +70,21 @@ li {
   color: white;
 }
 
+/* HomeSubHeaderSection */
+.style_section {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  width: 95%; 
+  height: 150px; 
+  margin: auto;
+  background-image: url('./assets/background_section.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 15px;
+  border-radius: 15px; 
+  overflow: hidden; 
+}
 
 /************************ RESPONSIVE MOBILE  ************************/
 @media only screen and (max-width: 600px) {
@@ -79,81 +95,6 @@ li {
     margin: 5px;
   }
 
-  .style_section {
-    justify-content: flex-start; 
-    color: white;
-    margin-bottom: 10px;
-  }
-  .image-container img {
-    width: 100%;
-    height: 220px;
-    display: block;
-    margin: auto;
-  }
- #imageCounterDesktop {
-  display: none;
- }
-  #apartment {
-    width: 100%;
-    margin: 0;
-  }
-  #imgAndLocation {
-    width: 50%;
-  }
-
-  .imgCover {
-    width: 100%;
-    height: auto;
-    margin: auto;
-
-  }
-  #tags {
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
-    margin-bottom: 0px;
-    color: black;
-  }
-  .titleApartment, .locationApartment {
-    color: #FF6060;
-  }
-  .locationApartment {
-    color: black;
-  }
-  .apartmentTags {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    height: auto;
-  }
-  .apartmentTags span {
-    background-color: #FF6060;
-    padding: 10px; 
-    margin-right: 20px;
-    display: inline-block; 
-    color: white;
-    border-radius: 5px;
-
-  }
-  #nameRating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin: 15px;
-  }
-  #apartmentCollapse {
-    flex-direction: column;
-  }
-  #name {
-    display: flex;
-    flex-direction: row;
-  }
-  .imgName {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    padding: 10px;
-  }
   .banniereCopyRight {
     align-items: center;
     text-align: center;
@@ -161,16 +102,10 @@ li {
     width: 150px;
     height: 50px;
   }
-
-  .collapse {
-    flex-direction: row; 
-    margin-bottom: 5px;
-  }
-  #apartmentCollapse {
-    flex-direction: column;
-  }
   .style_section {
     flex-direction: column;
+    color: white;
+    margin-bottom: 10px;
     align-items: flex-start;
     justify-content: center;
   }
@@ -184,12 +119,14 @@ li {
   #messagePartout {
       margin: 0.2em; 
   }
-  .oupsErrorMobile {
-    display: block;
+}
 
+/************************ DESKTOP RESPONSIVE  ************************/
+@media only screen and (min-width: 601px) {
+  .style_section p{
+    color: white;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
   }
-  .oupsErrorPc {
-    display: none;
-  }
-
 }
