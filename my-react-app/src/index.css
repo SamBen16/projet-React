@@ -6,9 +6,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -25,33 +23,31 @@ body {
   justify-content: space-between;
   margin: 25px;
 }
-.logo {
+.style-header .logo {
   width: 40%;
 }
-.nav {
+.style-header .nav {
   width: 50%;
 }
-.nav-header,
-li {
+.style-header .nav-header li a {
+  text-decoration: none;
+  color: #000;
+}
+.style-header .nav-header li a.active {
+  text-decoration: underline;
+}
+.style-header .nav-header, .style-header li {
   opacity: 0px;
   list-style: none;
   display: flex;
   justify-content: space-around;
   padding: 5px;
 }
-.nav-header li a {
-  text-decoration: none;
-  color: #000;
-}
-.nav-header li a.active {
-  text-decoration: underline;
-}
 
-/* footer */
 .style-footer {
   width: 100%;
   height: auto;
-  min-height: 250px;
+  min-height: 350px;
   gap: 0px;
   opacity: 0px;
   background-color: black;
@@ -61,35 +57,40 @@ li {
   text-align: center;
   z-index: 1000;
 }
-.logo_footer {
+.style-footer .logo_footer {
   margin-bottom: 30px;
 }
-.copyRight_footer {
+.style-footer .copyRight_footer {
   margin-bottom: -35px;
 }
-.banniereCopyRight {
+.style-footer .banniereCopyRight {
   color: white;
 }
 
-/* HomeSubHeaderSection */
 .style_section {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
-  width: 95%; 
-  height: 150px; 
+  width: 95%;
+  height: 150px;
   margin: auto;
-  background-image: url('./assets/background_section.png');
+  background-image: url("./assets/background_section.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 15px;
-  border-radius: 15px; 
-  overflow: hidden; 
+  border-radius: 15px;
+  overflow: hidden;
 }
-.imgSection {
+.style_section .imgSection {
   max-width: 100%;
   max-height: 100px;
   border-radius: 10px;
+}
+.style_section p {
+  font-size: large;
+  font-weight: bold;
+  padding-bottom: auto;
+  margin-bottom: 5px;
 }
 
 /* Gallery */
@@ -100,14 +101,14 @@ li {
   width: 95%;
   margin-bottom: 10px;
 }
-.thumb-container {
+.bodyGallery .thumb-container {
   margin-top: 10px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
 }
-.thumb {
+.bodyGallery .thumb-container .thumb {
   width: 350px;
   height: 350px;
   position: relative;
@@ -119,7 +120,7 @@ li {
   margin-bottom: 10px;
   border-radius: 25px;
 }
-.thumb p {
+.bodyGallery .thumb-container .thumb p {
   color: white;
   position: absolute;
   bottom: 5px;
@@ -127,7 +128,6 @@ li {
   margin: 10px;
 }
 
-/* Collapse */
 .collapse {
   display: flex;
   border-radius: 10px;
@@ -139,7 +139,7 @@ li {
   margin-top: 10px;
   padding: 0;
 }
-.barreCollapse {
+.collapse .barreCollapse {
   display: flex;
   justify-content: space-between;
   padding: 13px 20px 13px 18px;
@@ -149,74 +149,104 @@ li {
   width: 100%;
   margin: 0;
 }
-.vector {
+.collapse .vector {
   width: 25px;
   height: 17px;
   transform: rotate(0deg);
-  transition: 2s ease-in;
-} 
-.vector.rotation.rotate {
-  transform: rotate(-180deg); 
-  transition: 2s ease-in;
+  transition: 0.5s ease-in;
 }
-.collapseToggle.animated.expanded {
-  max-height: 1000px; 
-  margin-top: 0; 
-  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; 
+.collapse .vector.rotation.rotate {
+  transform: rotate(-180deg);
+  transition: 0.5s ease-in;
 }
-.collapseToggle {
+.collapse .collapseToggle.animated.expanded {
+  animation-duration: 3s;
+  animation-name: slidein;
+  max-height: 1000px;
+  width: 100%;
+  margin-top: 0;
+  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+}
+.collapse .collapseToggle.animated.expanded .container {
+  padding-bottom: 10px;
+  background-color: #F6F6F6;
+  border-radius: 10px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  width: 100%;
+  height: 25vh;
+  margin-bottom: 25px;
+}
+.collapse .collapseToggle.animated.expanded li {
+  justify-content: flex-start;
+  list-style: none;
+}
+.collapse .collapseToggle.animated.expanded .textCollapse {
+  width: 100%;
+  height: 15vh;
+  margin-bottom: 10px;
+  max-height: 1000px;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+.collapse .collapseToggle {
+  animation-duration: 3s;
+  animation-name: slideout;
   display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+}
+.collapse .collapseToggle .container {
+  padding-bottom: 10px;
+  background-color: #F6F6F6;
+  border-radius: 10px;
+  animation-duration: 3s;
+  animation-name: slideout;
+  width: 100%;
+  height: 25vh;
+  margin-bottom: 10px;
+}
+.collapse .collapseToggle .container li {
+  justify-content: flex-start;
+  list-style: none;
+}
+.collapse .collapseToggle .container.animated.expanded {
+  animation: slideout 0.5s ease;
+  margin-top: 0;
+}
+.collapse .collapseToggle .textCollapse {
+  animation-duration: 3s;
+  animation-name: slideout;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: 10px;
+  display: flex;
+  width: 100%;
   justify-content: center;
   align-content: center;
   margin-top: 0;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; 
-}
-.container {
-  background-color: #F6F6F6 ;
-  width: 100%;
-  border-radius: 10px;
-}
-.container li {
-  justify-content: flex-start;
-}
-
-.collapseToggle.animated.expanded .container {
-  animation: slidein 0.5s ease;
-  margin-top: 0;
-}
-.textCollapse {
-  position: relative; 
-  z-index: 1; 
-}
-.textCollapse, .collapseToggle.animated.expanded {
-  animation-duration: 2s;
-  animation-name: slidein;
-}
-.textCollapse, .collapseToggle {
-  width: 100%;
-  height: 20vh;
-  margin-bottom: 10px;
+  transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
 }
 @keyframes slidein {
   from {
-    margin-top: -10px; 
-    opacity: 0; 
+    margin-top: -3px;
   }
   to {
-    margin-top: 0;
-    opacity: 1;
+    margin-top: 0px;
   }
 }
 @keyframes slideout {
   from {
     margin-top: 0;
-    opacity: 1;
   }
   to {
-    margin-top: -10px; 
-    opacity: 0; 
+    margin-top: -12px;
   }
 }
 
@@ -234,19 +264,26 @@ li {
 .style-pageErreur p {
   color: #FF6060;
 }
+
 #page_404 {
-  width: 25%;
-  height: 25%;
+  width: 40%;
+  height: 40%;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
 }
+
 .oupsErrorMobile {
   display: none;
 }
+
 .oupsErrorPc {
   display: block;
 }
+
 #page_inexistante {
   width: 30%;
 }
+
 #retour_page_accueil {
   width: 50%;
 }
@@ -257,60 +294,72 @@ li {
   width: 100%;
   margin: 0;
 }
+
 #imgAndLocation {
   width: 100%;
 }
-.image-container {
+
+#apartment .image-container {
   position: relative;
-  width: 95%; 
+  width: 95%;
   margin: auto;
-  height: auto; 
+  height: auto;
   overflow: hidden;
 }
-.image-container img {
+
+#apartment .image-container img {
   width: 100%;
-  height: 550px;
+  height: 460px;
   display: block;
   margin: auto;
-  }
-.carousel-button {
+  border-radius: 25px;
+}
+
+#apartment .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1;
 }
-.previous, .next {
-  width: 5%; 
-  height: auto; 
+
+#apartment .carousel-button.previous,
+#apartment .carousel-button.next {
+  width: 5%;
+  height: auto;
 }
-.previous {
+
+#apartment .carousel-button.previous {
   left: 2%;
 }
-.next {
+
+#apartment .carousel-button.next {
   right: 2%;
 }
-.image-counter {
+
+#apartment .image-counter {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  color: white; 
+  color: white;
   padding: 5px 10px;
   border-radius: 5px;
 }
-.imgCover {
+
+#apartment .imgCover {
   width: 100%;
-  height: auto;
+  height: 450px;
   margin: auto;
 }
-.imgSection {
-  max-width: 100%; 
-  max-height: 100px; 
-  border-radius: 10px; 
+
+#apartment .imgSection {
+  max-width: 100%;
+  max-height: 100px;
+  border-radius: 10px;
 }
 
-/************************ RESPONSIVE MOBILE  ************************/
+/************************ RESPONSIVE MOBILE ************************/
 @media only screen and (max-width: 600px) {
   .logo {
     width: 35px;
@@ -338,17 +387,24 @@ li {
     padding-bottom: auto;
     margin-bottom: 5px;
   }
-  #messageChezVous,
-  #messagePartout {
-    margin: 0.2em; 
+  #messageChezVous, #messagePartout {
+    margin: 0.2em;
   }
-  #thumb-container, .thumb-container {
+  .bodyGallery {
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    margin: auto;
+    width: 95%;
+    margin-bottom: 10px;
+  }
+  .bodyGallery #thumb-container,
+  .bodyGallery .thumb-container {
     margin: 0;
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
   }
   .collapse {
-    flex-direction: row; 
+    flex-direction: row;
     margin-bottom: 5px;
   }
   .oupsErrorMobile {
@@ -357,39 +413,54 @@ li {
   .oupsErrorPc {
     display: none;
   }
-  #apartment, #imgAndLocation {
+  #apartment,
+  #imgAndLocation {
     width: 100%;
     margin: 0;
   }
-  .image-container img {
+  .image-container {
     width: 100%;
-    height: 220px;
-    display: block;
+    height: 255px;
     margin: auto;
+    display: block;
+  }
+  .image-container img {
+    margin: auto;
+    border-radius: 10px;
   }
   #imageCounterDesktop {
     display: none;
-   }
+  }
   #apartmentCollapse {
     flex-direction: column;
+    padding: 10px;
+  }
+  #apartmentCollapse #collapseDescription,
+  #apartmentCollapse #collapseEquipements {
+    margin-bottom: 15px;
   }
   .imgCover {
     width: 100%;
     height: auto;
     margin: auto;
   }
-  #tags, #nameRating {
+  #tags,
+  #nameRating {
     width: 90%;
     margin: auto;
-    text-align: center; 
+    text-align: center;
   }
-  .titleApartment, .locationApartment {
-    color: red;
+  .titleApartment {
+    font-size: 25px;
+    color: #FF6060;
+    text-align: left;
+  }
+  .locationApartment {
+    color: #FF6060;
     text-align: left;
   }
   .locationApartment {
     color: black;
-    font-weight: bold;
   }
   .apartmentTags {
     display: flex;
@@ -399,9 +470,9 @@ li {
   }
   .apartmentTags span {
     background-color: #FF6060;
-    padding: 5px; 
+    padding: 5px;
     margin-right: 5px;
-    display: inline-block; 
+    display: inline-block;
     color: white;
     border-radius: 5px;
     font-size: smaller;
@@ -412,21 +483,23 @@ li {
     justify-content: space-between;
     margin: 15px;
   }
-  #name {
+  #nameRating #name {
     display: flex;
     flex-direction: row;
   }
-  .imgName {
+  #nameRating #name p.hostName {
+    color: #FF6060;
+  }
+  #nameRating #name .imgName {
     border-radius: 50%;
     width: 60px;
     height: 60px;
     padding: 10px;
   }
 }
-
-/************************ DESKTOP RESPONSIVE  ************************/
+/************************ DESKTOP RESPONSIVE ************************/
 @media only screen and (min-width: 601px) {
-  .style_section p{
+  .style_section p {
     color: white;
     text-align: center;
     font-size: 200%;
@@ -438,17 +511,19 @@ li {
     width: 100%;
     margin: 0;
   }
-  #collapseDescription {
+  #apartmentCollapse #collapseDescription {
     width: 50%;
+    margin-bottom: 15px;
   }
-  #collapseEquipements {
+  #apartmentCollapse #collapseEquipements {
     width: 50%;
+    margin-bottom: 15px;
   }
   .apartmentTags span {
     background-color: #FF6060;
-    padding: 10px; 
+    padding: 10px;
     margin-right: 20px;
-    display: inline-block; 
+    display: inline-block;
     color: white;
     border-radius: 5px;
   }
@@ -474,4 +549,4 @@ li {
     height: 80%;
     padding: 10px;
   }
-}
+}/*# sourceMappingURL=index.css.map */

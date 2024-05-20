@@ -1,0 +1,552 @@
+$backroundPrimary : #FF6060;
+$backgroundColor: #F6F6F6;
+/************************ STYLES GENERAUX  ************************/
+html {
+	width: 100%;
+	margin: 0;
+}
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: 100%;
+}
+
+/* header */
+.style-header {
+	width: 95%;
+	height: 68px;
+	gap: 0px;
+	opacity: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 25px;
+	.logo {
+		width: 40%;
+	}
+	.nav {
+		width: 50%;
+		&-header li a {
+			text-decoration: none;
+			color: #000;
+			&.active {
+				text-decoration: underline;
+			}
+		}
+	}
+	.nav-header, li {
+		opacity: 0px;
+		list-style: none;
+		display: flex;
+		justify-content: space-around;
+		padding: 5px;
+	}
+}
+.style-footer {
+	width: 100%;
+	height: auto;
+	min-height: 350px;
+	gap: 0px;
+	opacity: 0px;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	z-index: 1000;
+	.logo_footer {
+		margin-bottom: 30px;
+	}
+	.copyRight_footer {
+		margin-bottom: -35px;
+	}
+	.banniereCopyRight {
+		color: white;
+	}
+}
+.style_section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 95%;
+	height: 150px;
+	margin: auto;
+	background-image: url("./assets/background_section.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: 15px;
+	border-radius: 15px;
+	overflow: hidden;
+	.imgSection {
+		max-width: 100%;
+		max-height: 100px;
+		border-radius: 10px;
+	}
+	p {
+		font-size: large;
+		font-weight: bold;
+		padding-bottom: auto;
+		margin-bottom: 5px;
+	}
+}
+
+/* Gallery */
+.bodyGallery {
+	background-color: $backgroundColor;
+	border-radius: 10px;
+	margin: auto;
+	width: 95%;
+	margin-bottom: 10px;
+	.thumb-container {
+		margin-top: 10px;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1px;
+		.thumb {
+			width: 350px;
+			height: 350px;
+			position: relative;
+			margin: auto;
+			top: 5px;
+			gap: 0px;
+			opacity: 0px;
+			border: 1px solid #000000;
+			margin-bottom: 10px;
+			border-radius: 25px;
+			p {
+				color: white;
+				position: absolute;
+				bottom: 5px;
+				left: 0;
+				margin: 10px;
+			}
+		}
+	}
+}
+.collapse {
+	display: flex;
+	border-radius: 10px;
+	margin: auto;
+	flex-wrap: wrap;
+	width: 90%;
+	align-items: flex-start;
+	position: relative;
+	margin-top: 10px;
+	padding: 0;
+	.barreCollapse {
+		display: flex;
+		justify-content: space-between;
+		padding: 13px 20px 13px 18px;
+		background: $backroundPrimary;
+		color: white;
+		border-radius: 10px;
+		width: 100%;
+		margin: 0;
+	}
+	.vector {
+		width: 25px;
+		height: 17px;
+		transform: rotate(0deg);
+		transition: 0.5s ease-in;
+		&.rotation.rotate {
+			transform: rotate(-180deg);
+			transition: 0.5s ease-in;
+		}
+	}
+	.collapseToggle.animated.expanded {
+        animation-duration: 3s;
+        animation-name: slidein;
+        max-height: 1000px;
+        width: 100%;
+		margin-top: 0;
+		transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+        .container {
+        padding-bottom: 10px;
+	    background-color: $backgroundColor;
+	    border-radius: 10px;
+		animation-duration: 3s;
+		animation-name: slidein;
+        width: 100%;
+	    height: 25vh;
+        margin-bottom: 25px;
+        }
+ 		li {
+	 			justify-content: flex-start;
+                 list-style: none;
+	 		}
+        .textCollapse {
+	 		width: 100%;
+	 		height: 15vh;
+	 		margin-bottom: 10px;
+            max-height: 1000px;
+            animation-duration: 3s;
+            animation-name: slidein;
+	     	}
+    }
+	.collapseToggle {
+        animation-duration: 3s;
+        animation-name: slideout;
+		display: flex;
+        width: 100%;
+		justify-content: center;
+		align-content: center;
+		overflow: hidden;
+		max-height: 0px;
+		transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+		.container {
+            padding-bottom: 10px;
+			background-color: $backgroundColor;
+			border-radius: 10px;
+			animation-duration: 3s;
+			animation-name: slideout;
+			width: 100%;
+			height: 25vh;
+			margin-bottom: 10px;
+			li {
+				justify-content: flex-start;
+                list-style: none;
+			}
+			&.animated.expanded {
+				animation: slideout 0.5s ease;
+				margin-top: 0;
+			}
+		}
+		.textCollapse {
+			animation-duration: 3s;
+			animation-name: slideout;
+			width: 100%;
+			height: 15vh;
+			margin-bottom: 10px;
+            display: flex;
+            width:  100%;
+            justify-content: center;
+            align-content: center;
+            margin-top: 0;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+		}
+        @keyframes slidein {
+            from {
+            margin-top: -3px;
+            }
+            to {
+            margin-top: 0px;
+            }
+        }
+        @keyframes slideout {
+            from {
+            margin-top: 0;
+            }
+            to {
+            margin-top: -12px;
+            }
+        }
+    }
+ }
+
+/* NotFound */
+.style-pageErreur {
+	text-align: center;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	img {
+		padding: 30px;
+	}
+	p {
+		color: $backroundPrimary;
+	}
+}
+#page_404 {
+    width: 40%;
+    height: 40%;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+.oupsErrorMobile {
+	display: none;
+}
+.oupsErrorPc {
+	display: block;
+}
+#page_inexistante {
+	width: 30%;
+}
+#retour_page_accueil {
+	width: 50%;
+}
+
+/* apartment */
+/* CAROUSEL */
+#apartment {
+    width: 100%;
+    margin: 0;
+  }
+  
+  #imgAndLocation {
+    width: 100%;
+  }
+  
+  #apartment .image-container {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  #apartment .image-container img {
+    width: 100%;
+    height: 460px;
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+  }
+  
+  #apartment .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  #apartment .carousel-button.previous,
+  #apartment .carousel-button.next {
+    width: 5%;
+    height: auto;
+  }
+  
+  #apartment .carousel-button.previous {
+    left: 2%;
+  }
+  
+  #apartment .carousel-button.next {
+    right: 2%;
+  }
+  
+  #apartment .image-counter {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  #apartment .imgCover {
+    width: 100%;
+    height: 450px;
+    margin: auto;
+  }
+  
+  #apartment .imgSection {
+    max-width: 100%;
+    max-height: 100px;
+    border-radius: 10px;
+  }
+  
+/************************ RESPONSIVE MOBILE ************************/
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 35px;
+        display: flex;
+        flex-direction: row;
+        margin: 5px;
+    }
+    .banniereCopyRight {
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        width: 150px;
+        height: 50px;
+    }
+    .style_section {
+        flex-direction: column;
+        color: white;
+        margin-bottom: 10px;
+        align-items: flex-start;
+        justify-content: center;
+      
+        p {
+          font-size: large;
+          font-weight: bold;
+          padding-bottom: auto;
+          margin-bottom: 5px;
+        }
+      }      
+    #messageChezVous, #messagePartout {
+        margin: 0.2em;
+    }
+    .bodyGallery {
+        background-color: $backgroundColor;
+        border-radius: 10px;
+        margin: auto;
+        width: 95%;
+        margin-bottom: 10px;
+    #thumb-container, 
+    .thumb-container {
+        margin: 0;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
+    .collapse {
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+    
+    .oupsErrorMobile {
+        display: block;
+    }
+    .oupsErrorPc {
+        display: none;
+    }
+    #apartment, 
+    #imgAndLocation {
+        width: 100%;
+        margin: 0;
+    }
+    .image-container {
+        width: 100%;
+        height: 255px;
+        margin: auto;
+        display: block;
+        img {
+        margin: auto;
+        border-radius: 10px;
+    }
+}
+    #imageCounterDesktop {
+        display: none;
+    }
+    #apartmentCollapse {
+        flex-direction: column;
+        padding: 10px;
+        #collapseDescription, 
+        #collapseEquipements {
+            margin-bottom: 15px;
+        }
+    }
+    .imgCover {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    #tags, 
+    #nameRating {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+    .titleApartment{
+        font-size: 25px;
+        color: $backroundPrimary;
+        text-align: left;
+    } 
+    .locationApartment {
+        color: $backroundPrimary;
+        text-align: left;
+    }
+    .locationApartment {
+        color: black;
+    }
+    .apartmentTags {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        height: auto;
+        span {
+            background-color: $backroundPrimary;
+            padding: 5px;
+            margin-right: 5px;
+            display: inline-block;
+            color: white;
+            border-radius: 5px;
+            font-size: smaller;
+        }
+    }
+    #nameRating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 15px;
+        #name {
+            display: flex;
+            flex-direction: row;
+            p.hostName {
+                color: $backroundPrimary;            }
+            .imgName {
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                padding: 10px;
+            }
+        }
+    }
+}
+  
+  
+/************************ DESKTOP RESPONSIVE ************************/
+@media only screen and (min-width: 601px) {
+    .style_section {
+        p {
+            color: white;
+            text-align: center;
+            font-size: 200%;
+            font-weight: bold;
+        }
+    }
+    #apartmentCollapse {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 0;
+    
+    #collapseDescription {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+    #collapseEquipements {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+}
+    .apartmentTags span {
+        background-color: $backroundPrimary;
+        padding: 10px;
+        margin-right: 20px;
+        display: inline-block;
+        color: white;
+        border-radius: 5px;
+    }
+    .bodyApartment {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 40px;
+    }
+    #nameRating {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 15px;
+      }
+      #name {
+        display: flex;
+        flex-direction: row;
+      }
+      .imgName {
+        border-radius: 50%;
+        width: 40%;
+        height: 80%;
+        padding: 10px;
+      }
+}

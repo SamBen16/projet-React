@@ -17,7 +17,7 @@ function Header() {
             <nav>
                 <ul className="nav-header">
                     <li><NavLink exact to="/" activeClassName="active">Accueil</NavLink></li>
-                    <li><NavLink to="/about" activeClassName="active">À propos</NavLink></li>
+                    <li><NavLink to="/about" activeClassName="active">A propos</NavLink></li>
                 </ul>
             </nav>
         </div>
