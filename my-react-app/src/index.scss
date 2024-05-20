@@ -170,7 +170,7 @@ body {
 		animation-duration: 3s;
 		animation-name: slidein;
         width: 100%;
-	    height: 25vh;
+	    height: 30vh;
         margin-bottom: 25px;
         }
  		li {
@@ -351,6 +351,14 @@ body {
     max-height: 100px;
     border-radius: 10px;
   }
+  .titleApartment{
+    color: $backroundPrimary;
+
+} 
+  p.hostName {
+    color: $backroundPrimary;  
+  }
+
   
 /************************ RESPONSIVE MOBILE ************************/
 @media only screen and (max-width: 600px) {
@@ -550,3 +558,31 @@ body {
         padding: 10px;
       }
 }
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+    .bodyGallery {
+        background-color: $backgroundColor;
+        border-radius: 10px;
+        margin: auto;
+        width: 95%;
+        margin-bottom: 10px;
+        .thumb-container {
+            margin-top: 10px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            .thumb {
+                width: 200px;
+                height: 200px;
+                position: relative;
+                margin: auto;
+                top: 5px;
+                gap: 0px;
+                opacity: 0px;
+                border: 1px solid #000000;
+                margin-bottom: 10px;
+                border-radius: 25px;
+            }
+        }
+    }
+    }
