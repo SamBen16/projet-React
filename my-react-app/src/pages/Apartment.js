@@ -29,9 +29,9 @@ function Apartment() {
         const stars = [];
         for (let i = 0; i < 5; i++) {
             if (i < item.rating) {
-                stars.push(<span key={i} style={{ color: '#FF6060' }}>★</span>);
+                stars.push(<span key={i} className="redStars">★</span>);
             } else {
-                stars.push(<span key={i} style={{ color: '#E3E3E3' }}>★</span>);
+                stars.push(<span key={i} className="greyStars">★</span>);
             }
         }
         return stars;
@@ -53,13 +53,14 @@ function Apartment() {
                     <img src={images[currentImageIndex]} alt={`Picture ${currentImageIndex +1}`} />
                     {images.length > 1 && (
                         <>
-                            <img src={precedent} alt="previous" className="carousel-button previous" onClick={handlePreviousImage} style={{ width: '20px', height: 'auto', cursor: 'pointer', marginRight: '10px' }}  />
-                            <img src={suivant} alt="next" className="carousel-button next" onClick={handleNextImage} style={{ width: '20px', height: 'auto', cursor: 'pointer' }} />
+                            <img src={precedent} alt="previous" className="carousel-button previous" onClick={handlePreviousImage}  />
+                            <img src={suivant} alt="next" className="carousel-button next" onClick={handleNextImage} />
                             <div className="image-counter" id="imageCounterDesktop">{currentImageIndex + 1}/{images.length}</div>
                         </>
                     )}
                 </div>
             </div>
+            
             <div className="bodyApartment">
                 <div id="tags">
                     <h1 className="titleApartment">{apartment.title}</h1>
@@ -76,6 +77,7 @@ function Apartment() {
                     </div>
                 </div>
             </div>
+
             <div id="apartmentCollapse">
                 <div id="collapseDescription">
                     <Collapse title="Description" description={apartment.description} />
